@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+/* 빨래방 pc */
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+/* Gothic A1 구글폰트 */
+
+/* css 초기화 하는 방식 2가지 */
+* {
+  /* outline: 1px solid darkblue; */
+  /* padding: 0;
+  margin: 0; */
+  box-sizing: border-box;
+}
+html, p, ul, ol, h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+:root {
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+h1 {
+  font-size: 70px;
+  text-align: center;
+  margin: 20px 0 50px;
+}
+/* 바디를 기준으로 레이아웃 가운데정렬 */
+/* body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.inner {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+
+  /* 스스로 레이아웃 가운데정렬 */
+  margin: 0 auto;
+}
+section {
+  height: 325px;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+/* 자식의 순서를 바꿀 수 있는 속성 order, self형식으로 선언
+기본 html의 나열이 최우선 순위, 그 이후로 선언된 order속성에
+따라 순서를 변경시킬 수 있다.  */
+section:nth-of-type(2) .txtBox {
+  order: 1;
+}
+section:nth-of-type(2) img {
+  order: 2;
+}
+.txtBox h2 {
+  color: #00B9D2;
+  font-weight: 600;
+  font-size: 18px;
+}
+.txtBox h3 {
+  padding: 10px 0 45px;
+  /* margin: 10px 0 45px; */
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 1;
+}
+.txtBox p {
+  line-height: 1.7;
+  color: #353535;
+}
