@@ -23,11 +23,11 @@ h1 {
   font-size: 70px;
   font-weight: 400;
 }
-h2 {
+h2, h3 {
   font-size: 30px;
   line-height: 40px;
 }
-h3 {
+h4 {
   color: #4A4A4A;
   font-weight: 500;
   font-size: 20px;
@@ -41,7 +41,6 @@ section:nth-child(1) .inner {
   padding: 80px 0 50px;
   gap: 18px;
 }
-
 section:nth-child(2) {
   background: url(/ex/images/lotte7/mountain.png) no-repeat 50% 0 / contain;
   margin: 0 0 200px;
@@ -50,13 +49,12 @@ section:nth-child(2) .inner {
   padding: 100px 0 0;
   gap: 60px;
 }
-section:nth-child(2) .inner > p {
+section:nth-child(2) .inner > h2 {
   color: #FFF;
   font-size: 30px;
   line-height: 40px;
 }
-
-section:nth-child(2) .inner > p span {
+section:nth-child(2) .inner > h2 span {
   font-weight: 700;
 }
 section:nth-child(2) .inner > div {
