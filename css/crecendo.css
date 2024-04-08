@@ -1,0 +1,177 @@
+@charset "UTF-8";
+
+/* crecendo pc */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+/* Noto Sans KR 구글폰트 */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-family: "Noto Sans KR", sans-serif;
+  color: #fff;
+}
+body {
+  min-width: 1280px;
+}
+h1 {
+  font-size: 6.25rem;
+  font-weight: 900;
+}
+h2 {
+  font-size: 3.2rem;
+  font-weight: 800;
+}
+h3 {
+  font-size: 1.87rem;
+  font-weight: 600;
+}
+a {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+section {
+  display: flex;
+  height: 830px;
+}
+section .left, section .right {
+  flex: 1 1 50%;
+  height: 100%;
+  display: inherit;
+}
+section .left {
+  justify-content: flex-end;
+}
+.inner {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inner600 {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 100%;
+  font-weight: 600;
+  position: relative;
+}
+
+.one {
+  background: url(/ex/images/crecendo/furniture_1.jpg) 50% 60% no-repeat;
+  background-size: cover;
+  padding: 250px 0 0 0;
+}
+.one h1 {
+  letter-spacing: 20px;
+  text-shadow: 5px 5px 10px #000;
+}
+.one h2 {
+  color: #009882;
+}
+.one p {
+  font-size: 1.25rem;
+}
+.one a {
+  margin: 100px 0 0 0;
+  background: #009882;
+}
+
+.two .left {
+  display: inherit;
+  justify-content: flex-end;
+}
+.two .right {
+  background: #009882;
+}
+.two .left .inner600 {
+  position: relative;
+  padding: 150px 0 0 0;
+  color: #000;
+}
+.two .left .inner600 img {
+  position: absolute;
+  top: 240px;
+}
+.two .right .inner600 {
+  padding: 220px 0 0 150px;
+}
+.two .right h3 {
+  margin: 20px 0;
+  font-weight: 300;
+}
+.two .right p {
+  font-size: 1.25rem;
+  margin: 0 0 40px 0;
+  font-weight: 300;
+}
+
+.three {
+  height: 756px;
+}
+.three .left article, .three .right article {
+  height: 470px;
+  position: relative;
+  padding: 40px;
+}
+.three .left article {
+  background: url(/ex/images/crecendo/furniture_3.jpg) no-repeat 0 -50px / cover;
+  margin: 100px 0 0 0;
+}
+.three .right article {
+  background: url(/ex/images/crecendo/furniture_4.jpg) no-repeat 0 -100px / cover;
+  margin: 80px 0 0 0;
+  color: #000;
+}
+.three .right .inner600 {
+  padding: 40px 0 0 0;
+}
+.three .left article a,
+.three .right article a {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  background: transparent;
+}
+.three .left article a {
+  border: 1px solid #fff;
+}
+.three .left article a span:first-child {
+  color: #009882;
+}
+.three .right h2 {
+  color: #000;
+}
+.three .right article a {
+  background: #009882;
+}
+
+.four {
+  height: auto;
+  text-align: center;
+  padding: 130px 0 0 0;
+  background-image: url(/ex/images/crecendo/pattern_01.png), url(/ex/images/crecendo/furniture_5.jpg);
+  background-position: 0 0, 50% 20%;
+  background-size: 3px 3px, cover;
+  background-repeat: repeat, no-repeat;
+}
+.four h2 {
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+.four p {
+  font-size: 1.25rem;
+  margin: 50px 0 0 0;
+}
+.four a {
+  height: 120px;
+  margin: 100px 0 0 0;
+  background: #009882;
+}
