@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+/* daily pc */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+/* Noto Sans KR 구글폰트 */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+/* font-awsome v6.5.2 */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-family: "Noto Sans KR", sans-serif;
+}
+body {
+  min-width: 1280px;
+}
+.inner {
+  width: 1200px;
+  margin: 0px auto 200px;
+}
+
+.inner > .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+  gap: 30px;
+}
+.inner > .title .logo {
+  width: 155px;
+  height: 61px;
+  position: relative;
+  text-decoration: none;
+  font-size: 2.8125rem;
+  color: #000;
+}
+.inner > .title .logo::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #DB0D26;
+  position: absolute;
+  display: block;
+  left: -16px;
+}
+.inner > .title .copy {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  gap: 12px;
+  color: #666;
+}
+.inner > .title .copy::before,
+.inner > .title .copy::after {
+  font-size: 1.2rem;
+  color: #ddd;
+  position: relative;
+  top: -10px;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 600;
+  color: inherit;
+}
+.inner > .title .copy::before {
+  content: "\f10d";
+}
+.inner > .title .copy::after {
+  content: "\f10e";
+}
+
+.inner .contents {
+  display: flex;
+  flex-wrap: wrap;
+}
+.contents .box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1 1 290px;
+  height: 230px;
+  padding: 20px;
+  margin: 0 0 20px 0;
+  color: #fff;
+  overflow: hidden;
+  text-decoration: none;
+}
+.contents .box .subTitle {
+  font-size: 1.9rem;
+  font-weight: 800;
+}
+.contents .box .copy {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-height: 1.3;
+  max-height: 3.9rem;
+}
+.contents .box .date {
+  color: rgba(255, 255, 255, 0.5);
+}
+.contents .box span.tag {
+  display: flex;
+  align-items: baseline;
+  height: 30px;
+  padding: 0px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.6);
+}
+.contents .box span.tag:hover {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8);
+}
+.contents .box.b01 {
+  background: url("/ex/images/daily/bg_phone_01.jpg") 50% 50% no-repeat;
+  background-size: cover;
+  text-indent: -9000px;
+}
+.contents .box.b02 {
+  background: #db0d36;
+  color: #fff;
+}
+.contents .box.b03,
+.contents .box.b10 {
+  margin: 0 20px 20px;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #888;
+  background: #f5f6f7;
+  justify-content: center;
+  align-items: center;
+}
+.contents .box.b04 {
+  background: url("/ex/images/daily/bg_phone_02.jpg") 50% 50% no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+.contents .box.b05,
+.contents .box.b08 {
+  color: #888;
+  background: #f5f6f7;
+}
+.contents .box.b05 .date,
+.contents .box.b08 .date {
+  color: #bbb;
+}
+.contents .box.b05 span.tag,
+.contents .box.b08 span.tag {
+  border: 1PX solid #bbb;
+  color: #bbb;
+}
+.contents .box.b05 span.tag:hover,
+.contents .box.b08 span.tag:hover {
+  border: 1PX solid #888;
+  color: #888;
+}
+.contents .box.photo {
+  flex: 1 1 600px;
+  margin: 0 20px 20px 0;
+  background: url("/ex/images/daily/bg_phone_03.jpg") 50% 50% no-repeat;
+  background-size: cover;
+  text-indent: -9000px;
+}
+.contents .box.b06 {
+  background: url("/ex/images/daily/bg_phone_04.jpg") 50% 50% no-repeat;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+.contents .box.b07 {
+  background: url("/ex/images/daily/bg_phone_05.jpg") 50% 50% no-repeat;
+  background-size: cover;
+  text-indent: -9000px;
+}
+.contents .box.b09 {
+  background: url("/ex/images/daily/bg_phone_06.jpg") 0% 0% no-repeat;
+  background-color: rgba(223, 169, 23, 0.8);
+  background-blend-mode: screen;
+  background-size: cover;
+  margin: 0 20px 20px;
+}
+.contents .box.b10 {
+  margin: 0 0 20px 0px;
+}
