@@ -1,0 +1,353 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid powderblue; */
+}
+:root {
+    font-family: "Noto Sans KR", sans-serif;
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* 기성 sec01, sec05 */
+.sec01 {
+    background: url(/ex/images/pocari01/pcpocariMain.png) no-repeat;
+    display: flex;
+    height: 1024px;
+    padding: 0px 240px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+.sec05 {
+    background: url(/ex/images/pocari01/pocariMain02.png) no-repeat;
+    display: flex;
+    height: 1024px;
+    padding: 0px 240px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+.sec01 .inner {
+    display: flex;
+    width: 960px;
+    padding-top: 250px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.sec05 .inner {
+    display: flex;
+    width: 960px;
+    padding-top: 250px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.sec01 .txtBox h3 {
+    margin: 20px 0 0 0;
+}
+
+.sec01 .txtBox p {
+    margin: 20px 0 40px 0;
+}
+
+.sec05 .txtBox h2 {
+    margin: 20px 0 20px 0;
+}
+
+.sec05 .txtBox p {
+    margin: 10px 0 20px 0;
+}
+
+.sec01 img {
+    width: 571px;
+    height: 428px;
+}
+
+.sec05 img {
+    width: 571px;
+    height: 428px;
+}
+
+.sec01 h3 {
+    color: var(--2, #0033a6);
+
+    text-align: center;
+    font-family: "Noto Sans";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.sec01 p {
+    color: #000;
+    text-align: center;
+    font-family: "Noto Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.sec01 a {
+    text-decoration: none;
+}
+
+.sec01 button {
+    display: flex;
+    padding: 14px 64px;
+    justify-content: center;
+    align-items: center;
+    background: #004fc6;
+    color: #fff;
+
+    text-align: center;
+    font-family: "Noto Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: solid transparent;
+}
+.sec01 button {
+    position: relative;
+    left: 180px;
+}
+
+.sec05 h2 {
+    color: #000;
+
+    text-align: center;
+    font-family: "Noto Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.sec05 a {
+    text-decoration: none;
+}
+
+.sec05 button {
+    display: flex;
+    padding: 14px 64px;
+    justify-content: center;
+    align-items: center;
+    background: #004fc6;
+    color: #fff;
+
+    text-align: center;
+    /* 현대LC/bt */
+    font-family: "Noto Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: solid transparent;
+}
+
+.sec05 button {
+    position: relative;
+    left: 60px;
+}
+
+/* 윤성 sec02 */
+.page2 {
+    display: flex;
+    width: 1440px;
+    height: 1024px;
+    align-items: flex-start;
+}
+.page2 .left {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1 0 0;
+    align-self: stretch;
+    background: url(/ex/images/pocari01/left.png) no-repeat 50% / cover;
+}
+.page2 .left.inner700 {
+    display: flex;
+    padding-left: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 46px;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+.main_logo {
+    width: 132px;
+    height: 132px;
+    background: url(/ex/images/pocari01/pocari_logo.png) no-repeat 50% / cover;
+    ;
+}
+.content {
+    width: 461px;
+    height: 171px;
+}
+.title {
+    width: 461px;
+    height: 66px;
+}
+.title h1:nth-child(1) {
+    color: var(--1, #007DC6);
+    font-family: "Noto Sans";
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.title h1:nth-child(2) {
+    color: #3395B9;
+    font-family: "Noto Sans";
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.sub_title {
+    width: 294px;
+    height: 104px;
+    justify-content: center;
+    /* 수평 가운데 정렬 */
+}
+.sub_title h2 {
+    color: #3C3937;
+    font-family: "Noto Sans";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.sub_title h2:nth-child(1),
+.sub_title h2:nth-child(3) {
+    color: #3C3937;
+}
+.sub_title h2:nth-child(2) {
+    color: var(--2, #0033A6);
+}
+.content2 {
+    display: flex;
+    padding-top: 100px;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+}
+.content2 article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.content2 article:nth-child(1) > h2 {
+    color: var(--2, #0033A6);
+
+    text-align: center;
+    font-family: "Noto Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+.content2 article:nth-child(1) > p {
+    width: 175px;
+    color: #000;
+}
+.comp1 {
+    display: flex;
+    padding: 10px;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1 0 0;
+}
+.comp1 img {
+    width: 135px;
+    height: 133px;
+    flex-shrink: 0;
+}
+
+/* 혜인 sec03 */
+.sec03, .esg, .blueLabel {
+    display: flex;
+    width: 1380px;
+    margin: 0 auto;
+}
+.sec03 {
+    width: 1440px;
+    flex-direction: column;
+}
+.blueLabel img {
+    order: 2;
+}
+.blueLabel > div {
+    order: 1;
+}
+.esg > div, .blueLabel > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 641px;
+}
+.esg p:first-of-type, .blueLabel p:first-of-type {
+    color: #54BFDB;
+    font-size: 50px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 39px;
+}
+.esg p:last-of-type, .blueLabel p:last-of-type {
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 400;
+}
+/* 윤지 .sec04  */
+.sec04 {
+    display: flex;
+    justify-content: center;
+    min-width: 1200px
+}
+.sec04-inner {
+    padding: 40px 0px;
+}
+.sec04 article {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.sec04 img {
+    height: 512px;
+}
+.sec04 .txt-box {
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+}
+.sec04 h2 {
+    color: #54BFDB;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+}
+.sec04 ol {
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+    list-style-type: none;
+}

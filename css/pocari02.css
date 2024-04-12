@@ -1,0 +1,333 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+}
+
+:root {
+  font-family: "Noto Sans KR"
+}
+
+.inner.sec03 {
+  display: flex;
+  width: 1440px;
+  padding: 0 30px;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.sec0301 {
+  display: flex;
+  padding: 20px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 171px;
+  align-self: stretch;
+}
+
+.sec0302 {
+  display: flex;
+  height: 472px;
+  justify-content: center;
+  align-items: center;
+  gap: 81px;
+  align-self: stretch;
+}
+
+.inner.sec03 .imagebox {
+  display: flex;
+  width: 605px;
+  align-items: center;
+  gap: 42px;
+}
+
+.inner.sec03 .imagebox img {
+  width: 800px;
+  height: 512px;
+  flex-shrink: 0;
+}
+
+.inner.sec03 .textbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex: 1 0 0;
+}
+
+.inner.sec03 .textbox h2 {
+  color: #54bfdb;
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.inner.sec03 .imagebox2 {
+  display: flex;
+  width: 605px;
+  align-items: center;
+  gap: 42px;
+  order: 2;
+}
+
+.inner.sec03 .imagebox2 img {
+  height: 512px;
+  flex-shrink: 0;
+}
+
+.inner.sec03 .textbox2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex: 1 0 0;
+  order: 1;
+}
+
+.textbox2 h2 {
+  color: #54bfdb;
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+}
+
+
+/* 채연+승빈 sec01, sec04 */
+section.sec01,
+section.sec04 {
+  display: flex;
+  height: 1024px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+section.sec01 {
+  background: url(/ex/images/pocari02/pocarisweat_pc.png) no-repeat 50% /cover;
+}
+section.sec01 .inner,
+section.sec04 .inner {
+  display: flex;
+  width: 960px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+.sec01 .inner {
+  padding-top: 250px;
+}
+.sec04 .inner {
+  display: flex;
+  align-items: flex-start;
+}
+section.sec01 .inner img,
+section.sec04 .inner img {
+  width: 571px;
+  height: 428px;
+  align-self: center;
+}
+section.sec01 h2,
+section.sec04 h2 {
+  color: #0033A6;
+  font-size: 40px;
+}
+section.sec01 p,
+section.sec04 p {
+  font-size: 20px;
+  font-weight: 400;
+}
+section.sec01 a,
+section.sec04 a {
+  background: #004FC6;
+  display: flex;
+  padding: 14px 64px;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  text-decoration: none;
+}
+section.sec04 .img2 {
+  height: 512px;
+  align-self: stretch;
+  background: url(/ex/images/pocari02/image12.png) no-repeat 50% / cover;
+}
+.sec04 .inner h2 {
+  color: #54BFDB;
+  font-size: 50px;
+  align-self: center;
+}
+.sec04 .inner span {
+  font-size: 20px;
+  padding-top: 39px;
+
+}
+
+
+/* 은, 선정 sec02 + sec05 */
+section.sec02 {
+  display: flex;
+  flex-direction: row;
+  height: 1024px;
+}
+.sec02 .left {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1 0 0;
+  align-self: stretch;
+  background-image: url(/ex/images/pocari02/background.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+}
+.sec02 .inner720 {
+  display: flex;
+  padding-left: 30px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 46px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+.sec02 .left img {
+  width: 132px;
+  height: 132px;
+}
+.sec02 h1 {
+  color: #007DC6;
+  font-family: "Noto Sans";
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.sec02 .left h1:nth-child(2) {
+  color: #3395B9;
+}
+.sec02 .subtitle {
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.sec02 span {
+  color: #0033A6;
+}
+.sec02 article {
+  display: flex;
+  padding-top: 100px;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  align-self: stretch
+}
+.sec02 article > div {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  text-align: center;
+  font-weight: 700;
+}
+.sec02 h3 {
+  color: #0033A6;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+.sec02 p {
+  font-size: 12px;
+}
+.sec02 .inner720:nth-child(2) {
+  padding: 100px 40px 30px 40px;
+}
+.sec02 .right {
+  background-image: url(/ex/images/pocari02/background02.png);
+  display: flex;
+  padding: 100px 40px 30px 40px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+.sec02 .txtbox2 {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.sec02 .txtbox2 > h1 {
+  font-size: 45px;
+}
+.sec02 .txtbox2 h2 {
+  font-size: 35px;
+}
+.sec02 .txtbox2 span {
+  color: #007DC6;
+  font-size: 50px;
+}
+.sec02 .txtbox2 > h4 {
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+.sec02 .imgbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+.sec05 {
+  background-image: url(/ex/images/pocari02/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  height: 1024px;
+  padding: 0px 240px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.sec05 .inner {
+  display: flex;
+  width: 960px;
+  padding-top: 200px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.sec05 p {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.sec05 span {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.sec05 a {
+  display: flex;
+  padding: 14px 64px;
+  justify-content: center;
+  align-items: center;
+  background: #004FC6;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
