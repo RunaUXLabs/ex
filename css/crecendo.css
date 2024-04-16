@@ -117,10 +117,19 @@ section .left {
 .three {
   height: 756px;
 }
-.three .left article, .three .right article {
+/* position을 사용하여 버튼배치 - 부모 */
+/* .three .left article, .three .right article {
   height: 470px;
   position: relative;
   padding: 40px;
+} */
+/* flex를 사용하여 버튼배치 - 부모 */
+.three .left article, .three .right article {
+  height: 470px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .three .left article {
   background: url(/ex/images/crecendo/furniture_3.jpg) no-repeat 0 -50px / cover;
@@ -134,12 +143,19 @@ section .left {
 .three .right .inner600 {
   padding: 40px 0 0 0;
 }
-.three .left article a,
+/* position을 사용하여 버튼배치 - 자식 */
+/* .three .left article a,
 .three .right article a {
   position: absolute;
   right: 40px;
   bottom: 40px;
   background: transparent;
+} */
+/* flex를 사용하여 버튼배치 - 자식 */
+.three .left article a,
+.three .right article a {
+  background: transparent;
+  align-self: flex-end;
 }
 .three .left article a {
   border: 1px solid #fff;
