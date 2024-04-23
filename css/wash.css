@@ -7,8 +7,8 @@
 /* css 초기화 하는 방식 2가지 */
 * {
   /* outline: 1px solid darkblue; */
-  /* padding: 0;
-  margin: 0; */
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 html, p, ul, ol, h1, h2, h3, h4, h5, h6 {

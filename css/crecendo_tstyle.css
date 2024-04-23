@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+/* crecendo t */
+body {
+  min-width: 640px;
+}
+h1 {
+  font-size: 3.75rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+section {
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+}
+.inner,
+.inner600 {
+  width: 100%;
+}
+
+.one {
+  padding: 375px 0 0 0;
+}
+.one .inner {
+  gap: 20px;
+}
+.one h1 {
+  letter-spacing: 0;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.one p {
+  display: none;
+}
+.one a {
+  margin: 0;
+}
+
+.two {
+  height: 1130px;
+}
+.two h2 {
+  font-size: 3.125rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.two .left {
+  height: 50%;
+  justify-content: center;
+  overflow: hidden;
+}
+.two .left .inner600 img {
+  position: initial;
+  top: auto;
+}
+.two .right {
+  height: 50%;
+  padding: 0 72px;
+}
+.two .right .inner600 {
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.two .right h3 {
+  margin: 30px 0 50px;
+}
+.two .right p {
+  margin: 0 0 50px 0;
+}
+
+.three {
+  height: 565px;
+  padding: 20px 0;
+}
+.three .left,
+.three .right {
+  width: 100%;
+  height: 50%;
+}
+.three .left article,
+.three .right article {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.three .right h2 {
+  display: none;
+}
+.three .right .inner600 {
+  padding: 0;
+}
+
+.four {
+  height: 680px;
+  padding: 170px 40px 0;
+}
+.four .inner {
+  justify-content: space-between;
+  height: 100%;
+}
+.four p,
+.four a {
+  margin: 0;
+}
