@@ -1,35 +1,10 @@
 @charset "UTF-8";
 /* 빨래방 t */
-h1 {
-  font-size: 50px;
-}
-
-.inner {
-  width: 100%;
-  padding: 0 40px;
-}
-section {
-  width: 100%;
-  height: auto;
-  flex-direction: column;
-  gap: 30px;
-}
-section img {
-  width: 100%;
-  height: 325px;
-  object-fit: cover;
-}
-section .txtBox {
-  width: 100%;
-  padding: 0 50px;
-}
-section:nth-of-type(2) .txtBox {
-  order: 2;
-}
-section:nth-of-type(2) img {
-  order: 1;
-}
-.txtBox h3 {
-  padding: 15px 0 30px;
-  font-size: 35px;
-}
+h1 { font-size: 50px; } 
+.inner { width: 100%; padding: 0 40px; } 
+section { width: 100%; height: auto; flex-direction: column; gap: 30px; } 
+section img { width: 100%; height: 325px; object-fit: cover; } 
+section .txtBox { width: 100%; padding: 0 50px; } 
+section:nth-of-type(2) .txtBox { order: 2; } 
+section:nth-of-type(2) img { order: 1; } 
+.txtBox h3 { padding: 15px 0 30px; font-size: 35px; } 
