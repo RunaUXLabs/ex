@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* daily t */
+body { min-width: 640px; } 
+.inner { width: 100%; margin: 0; } 
+.inner .contents { gap: 20px 0; /* gap: row column */}
+.contents .box { flex: 1 1 30%; margin: 0; } 
+.contents .box.b01 { flex: 1 1 100%; height: 70px; } 
+.contents .box.b05,
+.contents .box.photo { flex: 1 1 45%; } 
+.contents .box.b03,
+.contents .box.photo,
+.contents .box.b09,
+.contents .box.b10 { margin: 0; } 
+.contents .box.b06 { flex: 1 1 45%; order: 2; } 
+.contents .box.b07 { flex: 1 1 45%; order: 1; } 
+.contents .box.b08 { order: 3; } 
+.contents .box.b09 { order: 4; background-blend-mode: hue; } 
+.contents .box.b10 { order: 5; } 
