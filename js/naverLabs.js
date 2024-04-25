@@ -6,21 +6,22 @@ var swiper1 = new Swiper('.swipe1', {
     autoplay: { delay: 2000, },
 });
 
+let gnb = document.querySelector('.menu');
+let menuButton = document.querySelector('.mmenu');
+menuButton.addEventListener('click', function () {
+    gnb.classList.add("on");
+});
+let closeButton = document.querySelector('.mclose');
+closeButton.addEventListener('click', function () {
+    gnb.classList.remove("on");
+});
+
+
 $(document).ready(function () {
-    //리사이징 할때마다 스와이퍼 새로고침
-    $(window).resize(function () {
-        swiper1.update();
-    });
     $(".scroll").click(function () {
         $("html, body").animate({
             scrollTop: 0
         }, 1000);
         return false;
-    });
-    $(".mmenu").click(function () {
-        $(".menu").addClass("on");
-    });
-    $(".mclose").click(function () {
-        $(".menu").removeClass("on");
     });
 });
