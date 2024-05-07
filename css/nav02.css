@@ -1,0 +1,85 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100; 300; 400; 500; 700; 900&display=swap');
+/* Noto Sans KR 폰트 */
+
+/* nav02 */
+/* transform: translateY를 이용하여 메뉴 표현 */
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+:root {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+body {
+  min-width: 1500px;
+}
+ul,
+li {
+  list-style: none;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+h1, h2 {
+  background: #fff;
+  position: relative;
+  z-index: 10;
+}
+
+ul.menu {
+  height: 80px;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  background: #555;
+}
+ul.menu > li {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100%;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+ul.menu > li:first-child {
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+ul.menu > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex: 0 0 100%;
+  position: relative;
+  z-index: 10;
+  background: #555;
+}
+ul.menu > li > .sub_menu {
+  background: #777;
+  font-size: 1.2rem;
+  transform: translateY(-100%);
+  transition: 0.3s;
+}
+ul.menu > li > .sub_menu > li {
+  height: 50px;
+}
+ul.menu > li > .sub_menu > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+}
+ul.menu > li:hover > .sub_menu {
+  transform: translateY(0);
+}
+ul.menu > li:hover > a {
+  background: #444
+}
+.sub_menu > li:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
