@@ -1,0 +1,83 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100; 300; 400; 500; 700; 900&display=swap');
+/* Noto Sans KR 폰트 */
+@import url('https://pro.fontawesome.com/releases/v5.10.0/css/all.css');
+/* font-awsome v5.10 */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.css');
+/* animate */
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+:root {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+body {
+  min-width: 1500px;
+}
+ul,
+li {
+  list-style: none;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul.menu {
+  height: 80px;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  background: #555;
+}
+ul.menu > li {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100%;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+ul.menu > li:first-child {
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+ul.menu > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex: 0 0 100%;
+}
+ul.menu > li > .sub_menu {
+  background: #777;
+  font-size: 1.2rem;
+  display: none;
+}
+ul.menu > li > .sub_menu > li {
+  height: 50px;
+}
+ul.menu > li > .sub_menu > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+}
+
+/* 시각적으로 확인했을 때, 대메뉴에 마우스를 올리면 하위메뉴가 나온다고 생각하여 a에 hover를 걸지만, hover의 범위가 1차메뉴 a에 한정적이기 때문에 2차메뉴.sub_menu로 마우스를 이동하면 hover가 해제되기 때문에 .sub_menu가 사라진다  */
+/* ul.menu > li > a:hover ~ .sub_menu {
+  display: block;
+} */
+
+/* 1차메뉴 a와 2차메뉴 .sub_menu를 모두 담은 li에 hover하도록 범위를 설정한다 */
+ul.menu > li:hover > .sub_menu {
+  display: block;
+}
+ul.menu > li:hover > a,
+.sub_menu > li:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
