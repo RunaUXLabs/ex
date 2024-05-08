@@ -22,12 +22,26 @@ let collapse = element => {
     element.classList.add("active");
   } else { element.classList.remove("active"); }
 };
-// 반응형에서 아코디언 콜링함수
+
+// 반응형에서 아코디언 콜링함수, 창사이즈 감지하여 적용, 과부화걸림
+// let underRes1024 = elements => {
+//   for (const element of [...elements]) {
+//     element.addEventListener('click', function (e) {
+//       let iw = window.innerWidth;
+//       if (iw < 1024) {
+//         e.preventDefault(); // a링크 기본기능 막기
+//         collapse(this); // 아코디언 함수 콜링
+//       }
+//     });
+//   };
+// };
+
+// 반응형에서 아코디언 콜링함수, 미디어쿼리를 통해 변형되는 스타일속성값 감지하여 적용
 let underRes1024 = elements => {
   for (const element of [...elements]) {
     element.addEventListener('click', function (e) {
-      iw = window.innerWidth;
-      if (iw < 1024) {
+      let menuButtonDisplay = window.getComputedStyle(menuButton).display;
+      if (menuButtonDisplay == 'flex') {
         e.preventDefault(); // a링크 기본기능 막기
         collapse(this); // 아코디언 함수 콜링
       }
