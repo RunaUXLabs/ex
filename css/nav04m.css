@@ -57,6 +57,7 @@ ul.menu > li:first-child {
 }
 ul.menu > li > a {
   height: 50px;
+  /* pointer-events: none; */
 }
 ul.menu > li > .sub_menu {
   height: auto;
@@ -67,7 +68,7 @@ ul.menu > li > .sub_menu {
 ul.menu > li:hover .sub_menu {
   display: none;
 }
-ul.menu > li .sub_menu.active {
+ul.menu > li a.active ~ .sub_menu {
   background-color: #333;
   display: block;
 }
