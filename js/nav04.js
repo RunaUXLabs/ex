@@ -26,18 +26,13 @@ let collapse = element => {
 let underRes1024 = elements => {
   for (const element of [...elements]) {
     element.addEventListener('click', function (e) {
-      e.preventDefault(); // a링크 기본기능 막기
-      collapse(this);
+      iw = window.innerWidth;
+      if (iw < 1024) {
+        e.preventDefault(); // a링크 기본기능 막기
+        collapse(this); // 아코디언 함수 콜링
+      }
     });
   };
 };
-
-// 최초로딩시 조건
-let iw = window.innerWidth;
-if (iw < 1024) underRes1024(depth01All);
 // 반응형 모바일에서 대메뉴 a를 클릭시, 링크기능 막고 아코디언처럼 펼치기
-window.addEventListener('resize', () => {
-  let iw = window.innerWidth;
-  if (iw < 1024) underRes1024(depth01All);
-});
-
+window.addEventListener('resize', underRes1024(depth01All));
