@@ -5,16 +5,28 @@ const client = supabase.createClient(supabaseUrl, supabaseKey);
 async function loadData() {
   let { data: pindata, error } = await client.from('pins').select('*');
   console.log(pindata);
-  document.querySelector('#load > span:nth-of-type(1)').textContent = `장소명: ${pindata[0].building_name}`;
-  document.querySelector('#load > span:nth-of-type(2)').textContent = `위도: ${pindata[0].latitude}`;
-  document.querySelector('#load > span:nth-of-type(3)').textContent = `경도: ${pindata[0].longitude}`;
+  let span = document.querySelectorAll('#load > span');
+  span[0].textContent = `장소명: ${pindata[pindata.length - 1].building_name}`;
+  span[1].textContent = `위도: ${pindata[pindata.length - 1].latitude}`;
+  span[2].textContent = `경도: ${pindata[pindata.length - 1].longitude}`;
 }
 async function clickLoadData() {
   let { data: pindata, error } = await client.from('pins').select('*');
-  document.querySelector('#clickLoad > span:nth-of-type(1)').textContent = `장소명: ${pindata[0].building_name}`;
-  document.querySelector('#clickLoad > span:nth-of-type(2)').textContent = `위도: ${pindata[0].latitude}`;
-  document.querySelector('#clickLoad > span:nth-of-type(3)').textContent = `경도: ${pindata[0].longitude}`;
+  let span = document.querySelectorAll('#clickLoad > span');
+  span[0].textContent = `장소명: ${pindata[pindata.length - 1].building_name}`;
+  span[1].textContent = `위도: ${pindata[pindata.length - 1].latitude}`;
+  span[2].textContent = `경도: ${pindata[pindata.length - 1].longitude}`;
+}
+async function recordHandler() {
+  const { data, error } = await client.from('pins')
+    .insert([
+      { building_name: `${place.value}`, latitude: `${lat.value}`, longitude: `${lon.value}` },
+    ])
+    .select();
 }
 
 window.addEventListener('load', loadData);
-document.querySelector('#clickLoad > button').addEventListener('click', clickLoadData);
+let btLoad = document.querySelector('#clickLoad > button');
+btLoad.addEventListener('click', clickLoadData);
+let btSave = document.querySelector('#clickSave button');
+btSave.addEventListener('click', recordHandler);
