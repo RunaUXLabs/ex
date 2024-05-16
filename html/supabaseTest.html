@@ -5,9 +5,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>supabase test</title>
+  <link rel="stylesheet" href="/ex/css/supabase.css">
 </head>
 
 <body>
+  <h1>supabase 깔짝이기</h1>
+  <section id="load">
+    <h2>최초 로딩시 데이터 불러오기</h2>
+    <span>장소명:</span>
+    <span>위도:</span>
+    <span>경도:</span>
+  </section>
+
+  <section id="clickLoad">
+    <h2>버튼을 누르면 데이터 불러오기</h2>
+    <span>장소명:</span>
+    <span>위도:</span>
+    <span>경도:</span>
+    <button>불러오기</button>
+  </section>
+
+  <section id="clickSave">
+    <h2>버튼을 누르면 입력한 데이터 저장하기</h2>
+    <form>
+      <label for="place">장소명</label>
+      <input type="text" placeholder="장소명" id="place">
+      <label for="lat">위도</label>
+      <input type="text" placeholder="위도" id="lat">
+      <label for="lon">경도</label>
+      <input type="text" placeholder="경도" id="lon">
+      <button type="submit">저장</button>
+    </form>
+  </section>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="/ex/js/supabaseTest.js"></script>
