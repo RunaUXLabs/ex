@@ -1,0 +1,19 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+/* Noto Sans KR 폰트 */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  font-family: "Noto Sans KR", sans-serif;
+}
+body {
+  min-width: 1080px;
+}
+#map {
+  height: 500px;
+}
