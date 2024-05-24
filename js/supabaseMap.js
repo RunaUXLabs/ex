@@ -11,6 +11,13 @@ async function loadData() {
     level: 6
   };
   let baseMap = new kakao.maps.Map(mapBox, mapOption);
+
+  let clustererOption = {
+    map: baseMap,
+    averageCenter: true,
+    minLevel: 6
+  };
+  let pinClusterer = new kakao.maps.MarkerClusterer(clustererOption);
   class MakePin {
     constructor(name, lat, long) {
       this.name = name;
@@ -18,6 +25,7 @@ async function loadData() {
     }
   }
   let pins = [];
+  let markers = [];
   for (const iterator of pindata) {
     let pin = new MakePin(iterator["building_name"], iterator["latitude"], iterator["longitude"]);
     pins.push(pin);
@@ -27,6 +35,8 @@ async function loadData() {
       map: baseMap,
       position: pin.position
     });
+    markers.push(maker);
   }
+  pinClusterer.addMarkers(markers);
 }
 window.addEventListener('load', loadData);
