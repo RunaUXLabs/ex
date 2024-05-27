@@ -29,9 +29,6 @@ form button {
   align-items: center;
   gap: 10px;
 }
-section #githubLogout {
-  display: none;
-}
 section span,
 form span {
   flex: 1 1 30%;

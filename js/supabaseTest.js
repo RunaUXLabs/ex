@@ -34,12 +34,12 @@ async function signInWithGithub() {
 async function checkLogin() {
   const authInfo = await client.auth.getSession();
   const session = authInfo.data.session;
+  document.querySelector("#githubLogin").style.display = "none";
+  document.querySelector("#githubLogout").style.display = "none";
   if (session === null) {
     document.querySelector("#githubLogin").style.display = "flex";
-    document.querySelector("#githubLogout").style.display = "none";
   } else {
     document.querySelector("#githubLogout").style.display = "flex";
-    document.querySelector("#githubLogin").style.display = "none";
   }
 }
 async function signOut() {
