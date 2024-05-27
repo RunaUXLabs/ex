@@ -23,9 +23,33 @@ async function recordHandler() {
     ])
     .select();
 }
-
+async function signInWithGithub() {
+  const { data, error } = await client.auth.signInWithOAuth({
+    provider: 'github',
+    options: {
+      redirectTo: 'https://runauxlabs.github.io/ex/html/supabaseTest.html'
+    }
+  });
+}
+async function checkLogin() {
+  const authInfo = await client.auth.getSession();
+  const session = authInfo.data.session;
+  if (session === null) {
+    document.querySelector("#githubLogin").style.display = "flex";
+  } else {
+    document.querySelector("#githubLogout").style.display = "flex";
+  }
+}
+async function signOut() {
+  const { error } = await client.auth.signOut();
+  checkLogin();
+}
 window.addEventListener('load', loadData);
 let btLoad = document.querySelector('#clickLoad > button');
 btLoad.addEventListener('click', clickLoadData);
-let btSave = document.querySelector('#clickSave button');
+let btSave = document.querySelector('#clickSave form button');
 btSave.addEventListener('click', recordHandler);
+
+document.querySelector("#githubLogout").addEventListener('click', signInWithGithub);
+document.querySelector("#githubLogout").addEventListener("click", signOut);
+checkLogin();
