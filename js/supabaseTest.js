@@ -36,8 +36,10 @@ async function checkLogin() {
   const session = authInfo.data.session;
   if (session === null) {
     document.querySelector("#githubLogin").style.display = "flex";
+    document.querySelector("#githubLogout").style.display = "none";
   } else {
     document.querySelector("#githubLogout").style.display = "flex";
+    document.querySelector("#githubLogin").style.display = "none";
   }
 }
 async function signOut() {
