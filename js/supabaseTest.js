@@ -50,6 +50,6 @@ btLoad.addEventListener('click', clickLoadData);
 let btSave = document.querySelector('#clickSave form button');
 btSave.addEventListener('click', recordHandler);
 
-document.querySelector("#githubLogout").addEventListener('click', signInWithGithub);
+document.querySelector("#githubLogin").addEventListener('click', signInWithGithub);
 document.querySelector("#githubLogout").addEventListener("click", signOut);
 checkLogin();
