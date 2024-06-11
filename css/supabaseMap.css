@@ -17,3 +17,30 @@ body {
 #map {
   height: 500px;
 }
+.overlayInfo {
+  width: 286px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  transform: translateX(-50%);
+}
+.overlayInfo .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  background: #faaf0d;
+}
+.overlayInfo .title button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.overlayInfo .content {
+  height: 80px;
+}
