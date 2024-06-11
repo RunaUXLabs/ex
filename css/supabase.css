@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css);
 
 section {
   margin: 0 0 100px 0;
@@ -21,6 +22,12 @@ section > h2 {
 section button,
 form button {
   margin: 0 auto;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 section span,
 form span {

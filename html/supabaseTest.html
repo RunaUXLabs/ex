@@ -22,11 +22,19 @@
     <span>장소명:</span>
     <span>위도:</span>
     <span>경도:</span>
-    <button>불러오기</button>
+    <button type="button">불러오기</button>
   </section>
 
   <section id="clickSave">
-    <h2>버튼을 누르면 입력한 데이터 저장하기</h2>
+    <h2>회원가입된 사용자만 정보 입력 후 등록버튼을 누를 시 DB에 저장하기</h2>
+    <button id="githubLogin" type="button">
+      <i class="fa-brands fa-github"></i>
+      github login
+    </button>
+    <button id="githubLogout" type="button">
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+      github logout
+    </button>
     <form>
       <label for="place">장소명</label>
       <input type="text" placeholder="장소명" id="place">
