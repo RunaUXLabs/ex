@@ -13,6 +13,7 @@ async function loadData() {
   };
   let baseMap = new kakao.maps.Map(mapBox, mapOption);
 
+  // 클러스터러 설정
   let clustererOption = {
     map: baseMap,
     averageCenter: true,
@@ -30,52 +31,52 @@ async function loadData() {
       this.writer = writer;
     }
   }
-
   let pins = [];
   let markers = [];
 
+  // DB기준 핀생성
   for (const iterator of pindata) {
     let pin = new MakePin(iterator["building_name"], iterator["latitude"], iterator["longitude"],
       iterator["street_address"], iterator["desciption"], iterator["writer"]);
+    // 핀모음 배열에 추가
     pins.push(pin);
   }
+  // 핀배열기준 마커와 오버레이 생성
   for (const pin of pins) {
     // console.log(pin);
-    let maker = new kakao.maps.Marker({
+    let newMarker = new kakao.maps.Marker({
       map: baseMap,
       position: pin.position
     });
+    // 오버레이 컨텐츠 구성
     let content = `
-    <div class="overlayInfo">
-      <div class="title">
-        <span>${pin.name}</span>
-        <button onclick="closeOverlay()">X</button>
+      <div class="overlayInfo">
+        <div class="title">${pin.name}</div>
+        <div class="content">
+        </div>
       </div>
-      <div class="content">
-      </div
-    </div>`;
-    // 오버레이 생성
-    let overlay = new kakao.maps.CustomOverlay({
+    `;
+    let newOverlay = new kakao.maps.CustomOverlay({
       content: content,
-      map: baseMap,
-      position: pin.position
+      position: newMarker.getPosition(),
+      state: false
     });
-    markers.push(maker);
-    markers.push(overlay);
-    // 오버레이 닫기함수
-    function closeOverlay() {
-      overlay.setMap(null);
-    }
+
+    // 마커를 클릭시 커스텀 오버레이 토글
+    kakao.maps.event.addListener(newMarker, 'click', function () {
+      if (!newOverlay.state) {
+        newOverlay.setMap(baseMap);
+        newOverlay.state = true;
+      } else {
+        newOverlay.setMap(null);
+        newOverlay.state = false;
+      }
+    });
+
+    // 마커배열에 추가
+    markers.push(newMarker);
   }
+  // 마커배열 기준으로 클러스터러 구성
   pinClusterer.addMarkers(markers);
-  // 마커를 클릭 했을 때, 커스텀 오버레이 표시
-  kakao.maps.event.addListener(markers, 'click', function () {
-    overlay.setMap(baseMap);
-  });
-  // console.log(markers);
-  // 커스텀 오버레이를 닫기 위해 호출되는 함수입니다 
-
-
-
 }
 window.addEventListener('load', loadData);
