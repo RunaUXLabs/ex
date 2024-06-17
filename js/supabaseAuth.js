@@ -20,7 +20,8 @@ async function signInWithGithub() {
   const { data, error } = await client.auth.signInWithOAuth({
     provider: 'github',
     options: {
-      redirectTo: 'https://runauxlabs.github.io/ex/html/supabaseAuth.html'
+      // redirectTo: 'https://runauxlabs.github.io/ex/html/supabaseAuth.html'
+      redirectTo: 'http://127.0.0.1:5501/ex/html/supabaseAuth.html'
     }
   });
 }
