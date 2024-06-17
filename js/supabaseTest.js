@@ -16,42 +16,7 @@ async function clickLoadData() {
   span[1].textContent = `위도: ${pindata[pindata.length - 1].latitude}`;
   span[2].textContent = `경도: ${pindata[pindata.length - 1].longitude}`;
 }
-async function recordHandler() {
-  const { data, error } = await client.from('pins')
-    .insert([
-      { building_name: `${place.value}`, latitude: `${lat.value}`, longitude: `${lon.value}` },
-    ])
-    .select();
-}
-async function signInWithGithub() {
-  const { data, error } = await client.auth.signInWithOAuth({
-    provider: 'github',
-    options: {
-      redirectTo: 'https://runauxlabs.github.io/ex/html/supabaseTest.html'
-    }
-  });
-}
-async function checkLogin() {
-  const authInfo = await client.auth.getSession();
-  const session = authInfo.data.session;
-  document.querySelector("#githubLogin").style.display = "none";
-  document.querySelector("#githubLogout").style.display = "none";
-  if (session === null) {
-    document.querySelector("#githubLogin").style.display = "flex";
-  } else {
-    document.querySelector("#githubLogout").style.display = "flex";
-  }
-}
-async function signOut() {
-  const { error } = await client.auth.signOut();
-  checkLogin();
-}
+
 window.addEventListener('load', loadData);
 let btLoad = document.querySelector('#clickLoad > button');
 btLoad.addEventListener('click', clickLoadData);
-let btSave = document.querySelector('#clickSave form button');
-btSave.addEventListener('click', recordHandler);
-
-document.querySelector("#githubLogin").addEventListener('click', signInWithGithub);
-document.querySelector("#githubLogout").addEventListener("click", signOut);
-checkLogin();
