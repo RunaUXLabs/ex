@@ -1,5 +1,5 @@
 const supabaseUrl = 'https://gwgwtplocxkebwuqepbd.supabase.co';
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd3Z3d0cGxvY3hrZWJ3dXFlcGJkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUyMjAwMjUsImV4cCI6MjAzMDc5NjAyNX0.mYZ71l_TUW54pJnPyuufcuT8a5QoAiUcvSfwOy9IlY8";
+const supabaseKey = "";
 const client = supabase.createClient(supabaseUrl, supabaseKey);
 async function loadData() {
   let { data: pindata, error } = await client.from('pins').select('*');
