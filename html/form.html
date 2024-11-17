@@ -5,6 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>입력양식</title>
+  <style>
+    form {
+      margin: 0 auto;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+  </style>
 </head>
 
 <body>
@@ -13,25 +22,40 @@
     <input type="text" name="username" id="username" placeholder="사용자 이름" required>
 
     <!-- 비밀번호 입력 -->
-    <label for="password">비밀번호 입력</label>
-    <input type="password" name="password" id="password" minlength="8" required>
+    <div>
+      <label for="password">비밀번호 입력</label>
+      <input type="password" name="password" id="password" minlength="8" required>
+    </div>
 
     <!-- 이메일 입력 -->
     <input type="email" name="email" id="email" placeholder="example@email.com" required>
 
     <!-- 숫자 입력 -->
-    <label for="age">숫자 입력</label>
-    <input type="number" name="age" id="age" min="0" max="120">
+    <div>
+      <label for="age">숫자 입력</label>
+      <input type="number" name="age" id="age" min="0" max="120">
+    </div>
 
     <!-- 체크박스 -->
-    <input type="checkbox" name="subscribe" id="subscribe" checked>
-    <label for="subscribe">뉴스레터 구독</label>
+    <div>
+      <input type="checkbox" name="planning" id="planning" checked>
+      <label for="planning">기획</label>
+
+      <input type="checkbox" name="design" id="design">
+      <label for="design">디자인</label>
+
+      <input type="checkbox" name="development" id="development">
+      <label for="development">개발</label>
+    </div>
+
 
     <!-- 라디오 버튼 -->
-    <input type="radio" name="gender" id="male" value="male">
-    <label for="male">남성</label>
-    <input type="radio" name="gender" id="female" value="female">
-    <label for="female">여성</label>
+    <div>
+      <input type="radio" name="gender" id="male" value="male">
+      <label for="male">남성</label>
+      <input type="radio" name="gender" id="female" value="female">
+      <label for="female">여성</label>
+    </div>
 
     <!-- 선택 메뉴 -->
     <select name="country" id="country">
@@ -45,18 +69,24 @@
     <textarea name="message" id="message" rows="4" cols="50" placeholder="메시지를 입력하세요"></textarea>
 
     <!-- 파일 업로드 -->
-    <label for="document">파일 업로드</label>
-    <input type="file" name="document" id="document" accept=".pdf,.doc,.docx">
+    <div>
+      <label for="document">파일 업로드</label>
+      <input type="file" name="document" id="document" accept=".pdf,.doc,.docx">
+    </div>
 
     <!-- 날짜 선택 -->
-    <label for="birthdate">날짜선택</label>
-    <input type="date" name="birthdate" id="birthdate">
+    <div>
+      <label for="birthdate">날짜선택</label>
+      <input type="date" name="birthdate" id="birthdate">
+    </div>
 
-    <!-- 제출 버튼 -->
-    <button type="submit">제출</button>
-
-    <!-- 리셋 버튼 -->
-    <button type="reset">초기화</button>
+    <!-- 버튼 그룹 -->
+    <div>
+      <!-- 제출 버튼 -->
+      <button type="submit">제출</button>
+      <!-- 리셋 버튼 -->
+      <button type="reset">초기화</button>
+    </div>
   </form>
 </body>
 
