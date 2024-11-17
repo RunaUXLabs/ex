@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/* 프로필 기본 */
+/* * {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  outline: 1px solid red;
+} */
+body {
+  background-color: #f0f0f0;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  height: 100vh;
+}
+.container {
+  width: 80%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.profileImg {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+h1,
+h2,
+p {
+  text-align: center;
+}
+.contact {
+  text-align: center;
+}
+.contact a {
+  /* display: inline-block; */
+  margin: 5px;
+}
+.formContainer {
+  margin-top: 20px;
+}
+form {}
+label,
+input {
+  /* display: block; */
+  margin-bottom: 10px;
+}
+button {}
