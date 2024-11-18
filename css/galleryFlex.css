@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* Gallery Flex Layout */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+.galleryContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.galleryItem {
+  background-color: white;
+  margin: 10px;
+  flex: 1 1 calc(33.333% - 20px);
+  height: 200px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.galleryItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

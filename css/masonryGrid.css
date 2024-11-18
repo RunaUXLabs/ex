@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* Masonry Grid Layout */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+.masonryContainer {
+  column-count: 3;
+  column-gap: 20px;
+  row-gap: 20px;
+  padding: 20px;
+}
+.masonryItem {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.masonryItem img {
+  width: 100%;
+  display: block;
+  /* img 요소 하단의 여백 제거 */
+}

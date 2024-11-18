@@ -5,57 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Masonry Flex Layout</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-    }
-
-    /* .masonryContainer {
-      display: flex;
-      flex-wrap: wrap;
-      margin: -10px;
-    }
-
-    .masonryItem {
-      background-color: white;
-      margin: 10px;
-      flex: 1 1 calc(33.333% - 20px);
-      box-sizing: border-box;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    } */
-    .masonryContainer {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-      /* 아이템을 열 방향으로 정렬 */
-      align-content: flex-start;
-      /* 아이템이 상단에서 시작하도록 정렬 */
-      height: 1500px;
-      /* 세로로 쌓아 오른쪽으로 확장하는 개념이라 정확한 구조 표현이 어려움 */
-    }
-
-    .masonryItem {
-      background-color: white;
-      margin: 10px;
-      width: calc(33.333% - 20px);
-      /* 너비를 33.333%로 설정 */
-      box-sizing: border-box;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-
-
-    .masonryItem img {
-      width: 100%;
-      display: block;
-    }
-  </style>
+  <link rel="stylesheet" href="/ex/css/masonryFlex.css">
 </head>
 
 <body>
