@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiosk Order System</title>
+  <link rel="stylesheet" href="/ex/css/kioskSystem.css">
+</head>
+
+<body>
+  <h1>🕋✨루나의 별다방✨🕋</h1>
+  <div class="menu">
+    <div data-name="라벤더 카페 브레베" data-price="7000">
+      <img src="/ex/images/kiosk/20220412083026158.png" alt="라벤더 카페 브레베">
+      <h3>라벤더 카페 브레베</h3>
+      <p>Lavender Cafe Breve</p>
+      <p>진한 리저브 에스프레소 샷과 은은한 라벤더향이 고급스럽게 어우러진 부드럽고 세련된 풍미의 라벤더 카페 브레베</p>
+      <p>7,000원</p>
+    </div>
+    <div data-name="스파클링 시트러스 에스프레소" data-price="7500">
+      <img src="/ex/images/kiosk/20210322093318028.jpg" alt="스파클링 시트러스 에스프레소">
+      <h3>스파클링 시트러스 에스프레소</h3>
+      <p>Sparkling Citrus Espresso</p>
+      <p>리저브 에스프레소에 상큼한 레몬과
+        진저에일을 더해 청량감과 시트러스 풍미를
+        가득 선사하는 커피 음료</p>
+      <p>7,500원</p>
+    </div>
+    <div data-name="라즈베리 쇼콜라" data-price="5900">
+      <img src="/ex/images/kiosk/20210325161742703.jpg" alt="라즈베리 쇼콜라">
+      <h3>라즈베리 쇼콜라</h3>
+      <p>Raspberry chocolate Cake</p>
+      <p>초콜릿 케이크 사이에 진한 가나슈 필링을 넣은 후 라즈베리를 올린 진하고 묵직한 초콜릿 케이크입니다.</p>
+      <p>5,900원</p>
+    </div>
+  </div>
+  <div class="cart">
+    <h2>Cart</h2>
+    <div id="cartItems">
+      <!-- 메뉴추가됨 -->
+    </div>
+    <div class="total">
+      Total: <span id="totalAmount">0</span>원
+    </div>
+  </div>
+  <script src="/ex/js/kioskSystem.js"></script>
+</body>
+
+</html>
