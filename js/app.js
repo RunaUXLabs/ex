@@ -20,12 +20,12 @@ console.log(multiply(2, 3));  // 출력: 6
 // console.log(sum(2, 3)); // 출력: 5
 
 
-// // 동적(비동기)으로 가져오기
-// async function loadModule() {
-//   const module = await import('./math.js');
-//   // 몽땅 가져와서 module이라는 객체라고 쓸게
-//   console.log(module.add(2, 3)); // 출력: 5
-// } //그걸 함수 loadModule라고 선언한다?
+// 일반적으로 ESM은 정적이지만 동적(비동기)으로 가져오기
+async function loadModule() {
+  const module = await import('./math.js');
+  // 몽땅 가져와서 module이라는 객체라고 쓸게
+  console.log(module.add(2, 3)); // 출력: 5
+} //그걸 함수 loadModule라고 선언한다?
 
-// // 콜링 = 선언한 애 불러보겠음
-// loadModule();
+// 콜링 = 선언한 애 불러보겠음
+loadModule();
