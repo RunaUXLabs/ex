@@ -16,19 +16,24 @@ body {
 }
 main {
   width: 1080px;
+  height: 816px;
   padding: 20px 60px;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   gap: 20px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(255, 255, 255, 0.25) inset;
   overflow: hidden;
   backdrop-filter: blur(30px);
   border-radius: 20px;
 }
 h1 {
-  flex: 0 0 100%;
   font-size: 72px;
   line-height: 1.2;
+}
+main > div {
+  display: flex;
+  flex: 1;
+  gap: 60px;
 }
 section {
   flex: 1;
@@ -49,6 +54,8 @@ section .profileImg {
 }
 section > p:first-of-type {
   color: #fff;
+  line-height: 1.4;
+  flex: 1;
 }
 .contact {
   display: flex;
