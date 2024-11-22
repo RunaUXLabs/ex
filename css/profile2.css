@@ -12,7 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(/ex/images/profile/profileBg.png) no-repeat 50% 50% / cover;
+  background: url(/ex/images/profile/profileBg.png) no-repeat 50% 50% / contain;
 }
 main {
   width: 1080px;
