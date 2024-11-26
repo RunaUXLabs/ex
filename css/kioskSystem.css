@@ -96,28 +96,28 @@ body {
   flex-direction: column;
   gap: 12px;
 }
-.cart-item {
+.cartItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
   gap: 24px;
 }
-.cart-item span:first-of-type {
+.cartItem span:first-of-type {
   flex: 1;
 }
-.cart-item span:last-of-type {
+.cartItem span:last-of-type {
   flex: 0 0 100px;
   text-align: right;
 }
-.cart-item button {
+.cartItem button {
   background: none;
   padding: 4px 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   cursor: pointer;
 }
-.cart-item button:hover {
+.cartItem button:hover {
   background: #ddd;
 }
 .total {

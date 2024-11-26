@@ -33,7 +33,7 @@ function updateCart() {
 
     // 아이템 UI 요소 생성
     const itemElement = document.createElement('div');
-    itemElement.classList.add('cart-item');
+    itemElement.classList.add('cartItem');
 
     // 이름 및 수량 표시
     const itemNameAndCount = document.createElement('span');
