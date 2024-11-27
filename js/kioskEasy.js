@@ -8,6 +8,7 @@ const totalDisplay = document.querySelector("#total");
 
 // 메뉴 버튼 클릭 이벤트 추가
 menu.addEventListener("click", (event) => {
+  console.log(event.target.tagName);
   // 버튼 세개가 담겨있는 메뉴를 클릭했는데, 
   // 니가 클릭한 그 위치(타겟)가 버튼이면 통과
   if (event.target.tagName === "BUTTON") {
@@ -25,8 +26,11 @@ menu.addEventListener("click", (event) => {
     // 예시) cart.coffee   cart[coffee]    
     // 위에 선언된 cart라는 객체에 접근을 할거야(초기값은 텅)
     // 카트 현상황이 뭔지 모르겠으나, 내가 버튼을 눌러서 카트에 같은상품이 있으면 갯수를 늘려주고 없으면 1개라고 표기해줘
-    if (cart[name]) { cart[name].count++; }
-    else { cart[name] = { price, count: 1 }; }
+    if (cart[name]) {
+      cart[name].count++;
+    } else {
+      cart[name] = { price, count: 1 };
+    }
 
     // UI 업데이트
     updateCart(); // 외부에 선언된 함수콜링
@@ -38,6 +42,15 @@ menu.addEventListener("click", (event) => {
 function updateCart() {
   cartDisplay.innerHTML = ""; // 변수 cartDisplay의 자식 태그구성을 공백으로 초기화
   let total = 0; // 총금액은 0 이다
+  /**
+   * 이 함수는 클릭을 할 때마다 매번 호출이 되는데,
+   * 그때마다 초기화를 해 버리면 오히려 비효율적이지 않나? 라는 생각을 할 수 있고
+   * 이 방식은 비효율적인것이 맞습니다!
+   * 스크립트가 모듈식으로 구성이 되어있다면 업데이트 된 조각만 최신으로 유지하면 되거든요.
+   * 그러한 모듈구성을 수월하게 만들어 주는것이 프레임 워크이고
+   * 프레임워크의 종류는 리액트, 뷰 등등이 있는거예요😉
+   */
+
 
   // for in 구문,  객체 안에서만 노는 반복문
   // 번외편) for of 구문, 배열 안에서만 노는 반복문

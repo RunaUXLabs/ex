@@ -34,6 +34,8 @@ function updateCart() {
     // 아이템 UI 요소 생성
     const itemElement = document.createElement('div');
     itemElement.classList.add('cartItem');
+    // 대상.classList.add('클래스명')
+    // css에는 다 있어야 함, 프디는 모든 화면을 만들어야 하므로 그게 연결되는 css 리소스도 생각해 둬야한다.
 
     // 이름 및 수량 표시
     const itemNameAndCount = document.createElement('span');
@@ -51,6 +53,7 @@ function updateCart() {
         cartItems[name].count--; // 수량 감소
       } else {
         delete cartItems[name]; // 수량이 1이면 삭제
+        // delete는 예약어, 객체에서 해당 키에 대한 프로퍼티 제거
       }
       updateCart(); // UI 갱신
     });
