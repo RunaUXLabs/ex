@@ -35,4 +35,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./react/dist
           destination_dir: react
+
+      # 5. SPA로 인식 못하는 부분 404에러 대응, GitHub Pages의 SPA를 위한 리다이렉션 처리 설정
+      - name: Create 404.html for SPA
+        run: cp ./react/dist/index.html ./react/dist/404.html
+
       
