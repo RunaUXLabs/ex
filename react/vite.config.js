@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react-swc';
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: '../../dist/react', // 빌드 결과를 루트의 dist/react로 설정
+    outDir: '../dist/react', // 빌드 결과를 루트의 dist/react로 설정
     emptyOutDir: true, // 기존 파일 삭제
   },
 });
