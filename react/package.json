@@ -6,11 +6,7 @@
   "homepage": "https://runauxlabs.github.io/ex/react/",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "deploy": "gh-pages -d dist",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "copy-404": "node -e \"require('fs').copyFileSync('dist/index.html', 'dist/404.html')\""
+    "build": "vite build"
   },
   "dependencies": {
     "react": "^18.3.1",
