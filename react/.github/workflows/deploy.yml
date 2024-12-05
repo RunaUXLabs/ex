@@ -1,38 +1,41 @@
-name: Deploy to GitHub Pages
+name: Deploy React App to Main Branch
 
 on:
   push:
     branches:
-      - main # main 브랜치에 push될 때 실행
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+      - main  # main 브랜치에 푸시될 때 트리거
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    # 1. 코드 체크아웃
+    - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Setup Node.js
+    # 2. Node.js 설정
+    - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 22.11.0 # Node.js 버전
+        node-version: 22.11.0  # Node.js 버전
+        cache: "npm"
 
+    # 3. 의존성 설치
     - name: Install dependencies
-      run: npm ci
+      working-directory: react  # react 디렉토리로 이동
+      run: npm install
 
-    - name: Build project
+    # 4. 빌드
+    - name: Build the project
+      working-directory: react
       run: npm run build
 
-    - name: Upload artifact for deployment
-      uses: actions/upload-pages-artifact@v1
-      with:
-        path: ./dist # 빌드 결과물이 위치한 디렉토리
-
-    - name: Deploy to GitHub Pages
-      uses: actions/deploy-pages@v2
+    # 5. dist 폴더를 main 브랜치에 푸시
+    - name: Commit dist folder to main branch
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@users.noreply.github.com"
+        git add dist
+        git commit -m "Deploy React App to main branch"
+        git push origin main
