@@ -5,4 +5,8 @@ import react from '@vitejs/plugin-react-swc';
 export default defineConfig({
   plugins: [react()],
   base: '/ex/react2/', // GitHub Pages에서 react2 프로젝트의 경로
+  build: {
+    outDir: '../../dist/react2', // 루트의 dist/react2에 빌드
+    emptyOutDir: false,
+  },
 });

@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "clean": "rm -rf dist",
+    "build": "npm run build:react && npm run build:react2",
+    "build:react": "cd react && npm run build",
+    "build:react2": "cd react2 && npm run build",
+    "deploy": "npm run deploy:react && npm run deploy:react2",
+    "deploy:react": "cd react && npm run deploy",
+    "deploy:react2": "cd react2 && npm run deploy"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
+  }
+}
