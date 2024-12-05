@@ -1,0 +1,49 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # main 브랜치에 push될 때 실행
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 22.11.0 # Node.js 버전
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm install
+
+    # react 프로젝트 빌드
+    - name: Build React
+      run: |
+        cd react
+        npm install
+        npm run build
+
+    # react2 프로젝트 빌드
+    - name: Build React2
+      run: |
+        cd ../react2
+        npm install
+        npm run build
+
+    # 배포 (gh-pages로)
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: dist
