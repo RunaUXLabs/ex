@@ -1,0 +1,12 @@
+{
+  "name": "ex",
+  "private": true,
+  "scripts": {
+    "deploy-react": "cd react && npm install && npm run deploy",
+    "deploy-react2": "cd react2 && npm install && npm run deploy",
+    "deploy-all": "npm run deploy-react && npm run deploy-react2"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
+  }
+}
