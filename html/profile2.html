@@ -26,21 +26,45 @@
       <form action="/" method="POST">
         <span>
           <label for="name">what your name?</label>
-          <input type="text" id="name" name="name" placeholder="name" required>
+          <input type="text" id="name" name="from_name" placeholder="name" required>
         </span>
         <span>
           <label for="email">what your email?</label>
-          <input type="email" id="email" name="email" placeholder="email address" required>
+          <input type="email" id="email" name="from_email" placeholder="email address" required>
         </span>
         <span>
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="Please write what you want to say to me"
             required></textarea>
         </span>
-        <button type="button">Submit</button>
+        <button type="button" id="sendEmail">Submit</button>
       </form>
     </div>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    const form = document.querySelector('form');
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+
+      emailjs
+        .sendForm('service_5cs4jon', 'runauxlabsTemplate', form, {
+          publicKey: 'user_stJBqz5kKC5LyQt7X5M88',
+        })
+        .then(
+          () => {
+            alert('메일 전송에 성공했습니다 :)');
+          },
+          (error) => {
+            alert('메일 전송에 실패했습니다 :(', error.text);
+          },
+        );
+    };
+
+    const submitButton = document.querySelector('#sendEmail');
+    submitButton.addEventListener('click', sendEmail);
+  </script>
 </body>
 
 </html>
