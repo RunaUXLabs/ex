@@ -100,4 +100,5 @@ form button {
   background: #2C2C2C;
   border: none;
   color: #fff;
+  cursor: pointer;
 }
