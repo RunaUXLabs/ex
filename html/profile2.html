@@ -41,25 +41,34 @@
       </form>
     </div>
   </main>
+  <div id="dimOverlay">
+    <div class="spinner"></div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
     const form = document.querySelector('form');
     const submitButton = document.querySelector('#sendEmail');
-    // 함수 선언
+    const dimOverlay = document.querySelector('#dimOverlay');
+
     const sendEmail = (e) => {
       e.preventDefault(); // 폼 제출 방지
+
+      // 스피너와 dim 화면 표시
+      dimOverlay.classList.add('on');
+
       emailjs
         .sendForm('service_5cs4jon', 'runauxlabsTemplate', form, {
-          // .sendForm('서비스ID', '사용할템플릿명', form, {
-          publicKey: 'user_stJBqz5kKC5LyQt7X5M88', // 이메일JS에서 발급받은 publicKey
+          publicKey: 'user_stJBqz5kKC5LyQt7X5M88',
         })
         .then(
-          // 성공시
           () => {
+            // 스피너와 dim 화면 숨기기
+            dimOverlay.classList.remove('on');
             alert(`${form.from_name.value}님, 메일 전송에 성공했습니다 :)`);
           },
-          // 실패시
           (error) => {
+            // 스피너와 dim 화면 숨기기
+            dimOverlay.classList.remove('on');
             alert(`${form.from_name.value}님, 메일 전송에 실패했습니다 :(`);
           },
         );
