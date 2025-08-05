@@ -15,6 +15,8 @@ const sendEmail = () => {
         // 스피너와 dim 화면 숨기기
         dimOverlay.classList.remove('on');
         alert(`${form.from_name.value}님, 메일 전송에 성공했습니다 :)`);
+        // 폼 리셋
+        form.reset();
       },
       (error) => {
         // 스피너와 dim 화면 숨기기
