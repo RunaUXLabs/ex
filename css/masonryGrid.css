@@ -7,17 +7,24 @@ body {
   background-color: #f0f0f0;
 }
 .masonryContainer {
-  column-count: 3;
+  /* column-count를 사용한 Masonry 레이아웃 */
+  column-count: 5;
   column-gap: 20px;
-  row-gap: 20px;
+  /* column-count를 사용한 Masonry 레이아웃에서는 row-gap 속성이 기본적으로 지원되지 않음, 자식한테서 바닥 여백을 주는 방법이 있음 */
   padding: 20px;
+
+
+  /* 그리드 선언을 이용할 수 있지만 masonry 레이아웃을 완벽하게 구현할 수는 없음 */
+  /* display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px 40px; */
 }
 .masonryItem {
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
   overflow: hidden;
+  margin-bottom: 20px;
 }
 .masonryItem img {
   width: 100%;
