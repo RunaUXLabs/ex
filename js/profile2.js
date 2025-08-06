@@ -8,7 +8,7 @@ const sendEmail = () => {
 
   emailjs
     .sendForm('service_5cs4jon', 'runauxlabsTemplate', form, {
-      publicKey: 'user_stJBqz5kKC5LyQt7X5M88',
+      publicKey: 'emailjs에서 발급받은 사용자 키를 입력하세요',
     })
     .then(
       () => {
