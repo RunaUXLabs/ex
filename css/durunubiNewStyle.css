@@ -27,6 +27,9 @@ body {
     --colorGreenDark: #26712e;
     --colorBlueDark: #24599c;
     --colorOrangeDark: #aa4a27;
+    --colorGreenLight: #59BB8E;
+    --colorBlueLight: #6496D4;
+    --colorOrangeLight: #F9A98B;
     --colorWhite: #fff;
     --colorFontDark: #4a4a4a;
     --colorFontBasic: #666;
@@ -34,11 +37,12 @@ body {
     --swiper-theme-color: var(--colorWhite);
     --swiper-navigation-size: 0.8rem;
 }
+
 /* 스크롤바 커스텀 */
 /* Firefox */
 * {
     scrollbar-width: auto;
-    scrollbar-color: var(--colorOrange) var(--colorWhite);
+    scrollbar-color: var(--colorFontLight) var(--colorWhite);
 }
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
@@ -52,11 +56,6 @@ body {
     background: #f9f9f9;
 }
 
-*::-webkit-scrollbar-thumb {
-    background-color: var(--colorOrange);
-    border-radius: 8px;
-    /* border: 1px solid #f9f9f9; */
-}
 
 
 i > span {
@@ -102,7 +101,7 @@ header {
 .global a:link,
 .global a:visited {
     color: rgba(255, 255, 255, 0.8);
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     color: var(--colorFontLight);
 }
 .global a:hover {
@@ -279,6 +278,15 @@ section,
     max-width: 830px;
     height: 100%;
     position: relative;
+}
+#banner .swiper-wrapper {}
+#banner .swiper-slide {
+    height: 88%;
+    overflow: hidden;
+}
+#banner .swiper-slide img {
+    width: 100%;
+    margin-top: -81px;
 }
 #banner .swiper-control {
     width: 100%;
@@ -504,9 +512,7 @@ div.right .tabContent > .tabBox a {
 .sec02 .inner a:nth-child(6) {
     background: url(/ex/images/duru/field_img06.png) no-repeat 50% 16px;
 }
-.sec03 {
-    height: 480px;
-}
+
 .sec03 .inner {
     padding: 20px 60px 60px;
     flex-direction: column;
@@ -520,7 +526,7 @@ div.right .tabContent > .tabBox a {
     background: url(/ex/images/duru/thumbs-up.svg) no-repeat 0 0 / contain;
 }
 .sec03 .inner h2 span {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     color: var(--colorFontLight);
     margin: 0 0 0 10px;
 }
@@ -554,63 +560,64 @@ div.right .tabContent > .tabBox a {
 .recomandRoad > a {
     flex: 0 0 25%;
     max-width: 264px;
-    padding: 230px 20px 20px;
+    padding: 0 0 20px;
     position: relative;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     line-height: 1;
-    border: 1px solid #c4c4c4;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.08);
     border-radius: 10px;
     overflow: hidden;
     display: none;
+}
+.recomandRoad .lottie {
+    height: 223px;
 }
 .recomandRoad.on > .lottie {
     display: none;
 }
 .recomandRoad.on > a {
-    display: block;
+    display: flex;
+    flex-direction: column;
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: 100% 210px;
 }
 
 .recomandRoad .road {
-    padding: 7px 10px;
+    padding: 20px;
     display: flex;
-    align-items: center;
-    position: absolute;
-    top: 210px;
-    right: 10px;
-    transform: translate(0, -50%);
+    justify-content: flex-end;
     color: #fff;
     line-height: 1;
 }
 .recomandRoad > a.hae .road {
-    background: var(--colorOrange);
+    background: var(--colorOrangeLight);
 }
 .recomandRoad > a.nam .road {
-    background: var(--colorBlue);
+    background: var(--colorBlueLight);
 }
 .recomandRoad > a.seo .road {
-    background: var(--colorGreen);
+    background: var(--colorGreenLight);
 }
 
-.recomandRoad .road span:first-child::after,
-.recomandRoad .road span:nth-child(2)::after {
+.recomandRoad .road span:first-child:after,
+.recomandRoad .road span:nth-child(2):after {
     content: "";
     width: 1px;
     height: 9px;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.3);
     display: inline-block;
     margin: 0 5px;
 }
 .recomandRoad .area {
     color: var(--colorFontLight);
+    padding: 15px 20px;
 }
 .recomandRoad h4 {
     font-size: 1.125rem;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--colorFontBasic);
-    margin: 15px 0 10px;
+    padding: 15px 20px;
     letter-spacing: -1px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -619,22 +626,24 @@ div.right .tabContent > .tabBox a {
     -webkit-line-clamp: 1;
 }
 .recomandRoad .summary {
-    color: var(--colorGreen);
+    color: var(--colorFontDark);
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 3;
     width: 100%;
+    padding: 0 20px;
+    font-size: 0.875rem;
 }
 .recomandRoad > a.hae .tag {
-    color: var(--colorOrange);
+    color: var(--colorOrangeLight);
 }
 .recomandRoad > a.nam .tag {
-    color: var(--colorBlue);
+    color: var(--colorBlueLight);
 }
 .recomandRoad > a.seo .tag {
-    color: var(--colorGreen);
+    color: var(--colorGreenLight);
 }
 
 .sec04 {
@@ -726,137 +735,107 @@ div.right .tabContent > .tabBox a {
     background-position: 50% 0;
     background-size: 100% 150px;
 }
-.recomandRoad > a.hae.hae1,
 .tabContent > div.hae > a.hae1 {
     background-image: url(/ex/images/duru/road_hae_01.jfif);
 }
-.recomandRoad > a.hae.hae2,
 .tabContent > div.hae > a.hae2 {
     background-image: url(/ex/images/duru/road_hae_02.jfif);
 }
-.recomandRoad > a.hae.hae3,
 .tabContent > div.hae > a.hae3 {
     background-image: url(/ex/images/duru/road_hae_03.jfif);
 }
-.recomandRoad > a.hae.hae4,
 .tabContent > div.hae > a.hae4 {
     background-image: url(/ex/images/duru/road_hae_04.jfif);
 }
-.recomandRoad > a.hae.hae5,
 .tabContent > div.hae > a.hae5 {
     background-image: url(/ex/images/duru/road_hae_05.jfif);
 }
-.recomandRoad > a.hae.hae6,
 .tabContent > div.hae > a.hae6 {
     background-image: url(/ex/images/duru/road_hae_06.jfif);
 }
-.recomandRoad > a.hae.hae7,
 .tabContent > div.hae > a.hae7 {
     background-image: url(/ex/images/duru/road_hae_07.jfif);
 }
-.recomandRoad > a.hae.hae8,
 .tabContent > div.hae > a.hae8 {
     background-image: url(/ex/images/duru/road_hae_08.jfif);
 }
-.recomandRoad > a.hae.hae9,
 .tabContent > div.hae > a.hae9 {
     background-image: url(/ex/images/duru/road_hae_09.jfif);
 }
-.recomandRoad > a.hae.hae10,
 .tabContent > div.hae > a.hae10 {
     background-image: url(/ex/images/duru/road_hae_10.jfif);
 }
-.recomandRoad > a.nam.nam1,
 .tabContent > div.nam > a.nam1 {
     background-image: url(/ex/images/duru/road_nam_01.jpg);
 }
-.recomandRoad > a.nam.nam2,
 .tabContent > div.nam > a.nam2 {
     background-image: url(/ex/images/duru/road_nam_02.jpg);
 }
-.recomandRoad > a.nam.nam3,
 .tabContent > div.nam > a.nam3 {
     background-image: url(/ex/images/duru/road_nam_03.jpg);
 }
-.recomandRoad > a.nam.nam4,
 .tabContent > div.nam > a.nam4 {
     background-image: url(/ex/images/duru/road_nam_04.jpg);
 }
-.recomandRoad > a.nam.nam5,
 .tabContent > div.nam > a.nam5 {
     background-image: url(/ex/images/duru/road_nam_05.jpg);
 }
-.recomandRoad > a.nam.nam6,
 .tabContent > div.nam > a.nam6 {
     background-image: url(/ex/images/duru/road_nam_06.jfif);
 }
-.recomandRoad > a.nam.nam7,
 .tabContent > div.nam > a.nam7 {
     background-image: url(/ex/images/duru/road_nam_07.jfif);
 }
-.recomandRoad > a.nam.nam8,
 .tabContent > div.nam > a.nam8 {
     background-image: url(/ex/images/duru/road_nam_08.jfif);
 }
-.recomandRoad > a.nam.nam9,
 .tabContent > div.nam > a.nam9 {
     background-image: url(/ex/images/duru/road_nam_09.jfif);
 }
-.recomandRoad > a.nam.nam10,
 .tabContent > div.nam > a.nam10 {
     background-image: url(/ex/images/duru/road_nam_10.jfif);
 }
-.recomandRoad > a.seo.seo1,
 .tabContent > div.seo > a.seo1 {
     background-image: url(/ex/images/duru/road_seo_01.jfif);
 }
-.recomandRoad > a.seo.seo2,
 .tabContent > div.seo > a.seo2 {
     background-image: url(/ex/images/duru/road_seo_02.jfif);
 }
-.recomandRoad > a.seo.seo3,
 .tabContent > div.seo > a.seo3 {
     background-image: url(/ex/images/duru/road_seo_03.jfif);
 }
-.recomandRoad > a.seo.seo4,
 .tabContent > div.seo > a.seo4 {
     background-image: url(/ex/images/duru/road_seo_04.jfif);
 }
-.recomandRoad > a.seo.seo5,
 .tabContent > div.seo > a.seo5 {
     background-image: url(/ex/images/duru/road_seo_05.jfif);
 }
-.recomandRoad > a.seo.seo6,
 .tabContent > div.seo > a.seo6 {
     background-image: url(/ex/images/duru/road_seo_06.jfif);
 }
-.recomandRoad > a.seo.seo7,
 .tabContent > div.seo > a.seo7 {
     background-image: url(/ex/images/duru/road_seo_07.jfif);
 }
-.recomandRoad > a.seo.seo8,
 .tabContent > div.seo > a.seo8 {
     background-image: url(/ex/images/duru/road_seo_08.jfif);
 }
-.recomandRoad > a.seo.seo9,
 .tabContent > div.seo > a.seo9 {
     background-image: url(/ex/images/duru/road_seo_09.jfif);
 }
-.recomandRoad > a.seo.seo10,
 .tabContent > div.seo > a.seo10 {
     background-image: url(/ex/images/duru/road_seo_10.jfif);
 }
 
 .tabContent > div.hae > a > span {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     color: var(--colorOrange);
 }
 .tabContent > div.nam > a > span {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     color: var(--colorBlue);
 }
 .tabContent > div.seo > a > span {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     color: var(--colorGreen);
 }
 .tabContent > div > a > p {
@@ -921,10 +900,10 @@ div.right .tabContent > .tabBox a {
     color: #fff;
 }
 .sec05 .inner > div.tag:nth-of-type(1) > a {
-    background: #59BB8E;
+    background: var(--colorGreenLight);
 }
 .sec05 .inner > div.tag:nth-of-type(2) > a {
-    background: #6496D4;
+    background: var(--colorBlueLight);
 }
 .sec05 .inner > .road {
     margin: 20px 0 0 0;
@@ -947,7 +926,7 @@ div.right .tabContent > .tabBox a {
     font-weight: 400;
 }
 .sec05 .inner > .road a > span:nth-child(2) {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     margin: 0 10px 0 0;
 }
 .sec05 .inner > .road a > span:nth-child(3) {
@@ -956,9 +935,13 @@ div.right .tabContent > .tabBox a {
     overflow: hidden;
     flex: 1 1 50%;
 }
-.sec05 .inner > #banner {
+.sec05 .inner > .banner {
     height: 100%;
-    background: var(--colorOrange);
+}
+.sec05 .inner > .banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .sec06 {
     height: 256px;
@@ -1057,7 +1040,7 @@ footer select {
 footer .copyright a:link,
 footer .copyright a:visited {
     text-decoration: none;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     color: var(--colorFontLight);
     font-weight: 600;
     margin: 0 20px 0 0;
@@ -1066,6 +1049,6 @@ footer address {
     font-style: normal;
     display: flex;
     flex-direction: column;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     color: var(--colorFontLight);
 }
