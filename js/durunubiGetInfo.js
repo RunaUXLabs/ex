@@ -21,7 +21,7 @@ export const config = {
   },
   roads: 3, // 길 종류(해파랑, 남파랑, 서해랑)
   recommendRoadCount: 3, // 뽑을 길의 수
-  maxCounts: [50, 90, 109], // 0:해파랑, 1:남파랑, 2:서해랑 각 길마다 최대 코스 수
+  maxCounts: [50, 90, 109], // 0:해파랑, 1:남파랑, 2:서해랑 각 길마다 최대 코스 수, 서해랑 길은 109개이나 100번이후 데이터가 온전치 않음
   recommendCourseCount: 5, // 각 길마다 추천할 코스 수
   api: {
     serviceKey: 'Iv76qim5Ny6HUJz794fWsPnAJ%2BwHb%2BsdheosUWgR8rbILCn7M9L6zNFDr%2FHWJtuGhpLXdiP%2FfvROWpDUW7Zupg%3D%3D',
@@ -90,70 +90,87 @@ export const getInfo = async (num, max) => {
     let data = json.response.body.items.item;
     // console.log(data);
 
-    // 해당길 인덱스번호 입력(필수)하여 길 추출하여 정보구분, 예) 해파랑길 1코스 => index = 1
-    let crs = (index) => data[index]; // 해당길의 인덱스별 길정보 반환하여 특정
-    let crsName = (index) => crs(index)['crsKorNm']; // 특정길 코스명
-    let crsDistance = (index) => `${crs(index)['crsDstnc']} km`;  // 특정길 거리
-
-    // 특정길 소요시간 mmmm분 => h시간 mm분으로 가공
-    let crsHourWithMin = (index) => {
-      const totalMinutes = Number(crs(index)['crsTotlRqrmHour']); // 소요시간(분)
-      if (isNaN(totalMinutes) || totalMinutes === 0) return '정보 없음';
-
-      const hours = Math.floor(totalMinutes / 60); // 시간 계산
-      const minutes = totalMinutes % 60; // 분 계산
-
-      // 시간과 분을 조합하여 반환
-      if (hours > 0) return minutes > 0 ? `${hours}시간 ${minutes}분` : `${hours}시간`;
-      return `${minutes}분`;
+    /**
+     * 안전하게 객체 속성 값을 가져오는 함수
+     * @param {Object} obj - 대상 객체
+     * @param {string} key - 가져올 속성 키
+     * @param {any} defaultValue - 기본값
+     * @returns {any} 속성 값 또는 기본값
+     */
+    const getSafeValue = (obj, key, defaultValue = '정보 없음') => {
+      return obj && obj[key] ? obj[key] : defaultValue;
     };
 
-    // crsLevel 코스레벨
-    let crsLevel = (index) => {
-      let level = crs(index)['crsLevel'];
-      let result = '';
-      if (level == 1) result = '쉬움';
-      if (level == 2) result = '보통';
-      if (level == 3) result = '어려움';
-      return result;
-    };
-    let crsArea = (index) => crs(index)['sigun']; // 특정길 코스위치
+    /**
+     * 추천길 카드 생성 함수
+     * @param {number} index - 도출된 해당길 JSON data 인덱스번호
+     */
+    const createRecomandRoad = (index) => {
+      const course = data[index]; // 해당길의 인덱스별 길정보 반환하여 특정
+      const name = getSafeValue(course, 'crsKorNm', ''); // 특정길 코스명
 
-    // 특정길 코스정보 요약(데이터에 있는 <br> 태그와 하이픈(-) 제거)
-    let crsSummary = (index) => {
-      let summary = crs(index)['crsSummary'];
-      return summary.replace(/<br\s*\/?>(\s*-\s*)?|-/gi, '');
-    };
+      // 코스 이름(crsKorNm)이 없으면 카드 생성을 건너뜀
+      if (!name) {
+        console.log(`[정보] 인덱스 ${index}번 카드는 코스 이름이 없어 카드 생성을 건너뜁니다.`);
+        return;
+      }
 
-    // 각 길정보 데이터 디스턱쳐링
-    let createRecomandRoad = (index) => {
+      // --- 유효한 데이터로 카드 생성 시작 ---
       const a = document.createElement('a');
 
       // 상단의 num 번호에 따라 걷기길 분류되니, 그에 따라 클래스 이름변경
-      if (num === 0) a.classList.add(`hae`, `hae${index}`);
-      else if (num === 1) a.classList.add(`nam`, `nam${index}`);
-      else if (num === 2) a.classList.add(`seo`, `seo${index}`);
+      if (num === 0) a.classList.add(`hae`);
+      else if (num === 1) a.classList.add(`nam`);
+      else if (num === 2) a.classList.add(`seo`);
 
-      // 길상세 정보 뱃지
+      // 거리 정보
+      const distance = `${getSafeValue(course, 'crsDstnc', '?')} km`;
+
+      // 소요 시간 정보, mmmm분 => h시간 mm분으로 가공
+      const totalMinutes = Number(getSafeValue(course, 'crsTotlRqrmHour', 0));
+      let hourWithMin = '정보 없음';
+      if (!isNaN(totalMinutes) && totalMinutes > 0) {
+        const hours = Math.floor(totalMinutes / 60); // 시간 계산
+        const minutes = totalMinutes % 60; // 분 계산
+        // 시간과 분을 조합하여 반환
+        if (hours > 0) {
+          hourWithMin = minutes > 0 ? `${hours}시간 ${minutes}분` : `${hours}시간`;
+        } else {
+          hourWithMin = `${minutes}분`;
+        }
+      }
+
+      // 난이도 정보
+      const levelCode = getSafeValue(course, 'crsLevel', 0);
+      let levelText = '정보 없음';
+      if (levelCode == 1) levelText = '쉬움';
+      else if (levelCode == 2) levelText = '보통';
+      else if (levelCode == 3) levelText = '어려움';
+
+      // 지역 정보
+      const area = getSafeValue(course, 'sigun');
+
+      // 특정길 코스정보 요약(데이터에 있는 <br> 태그와 하이픈(-) 제거)
+      const summaryRaw = getSafeValue(course, 'crsSummary');
+      const summary = summaryRaw.replace(/<br\s*\/?>(\s*-\s*)?|-/gi, '');
+
+      // 카드 DOM 생성, 각 정보 배치
       const road = document.createElement('div');
       road.classList.add('road');
       road.append(
-        createElementWithText('span', crsDistance(index)),
-        createElementWithText('span', crsHourWithMin(index)),
-        createElementWithText('span', crsLevel(index))
+        createElementWithText('span', distance),
+        createElementWithText('span', hourWithMin),
+        createElementWithText('span', levelText)
       );
       a.appendChild(road);
 
-      // 길 전체 정보
       a.append(
-        createElementWithText('span', crsArea(index), 'area'),
-        createElementWithText('h4', crsName(index)),
-        createElementWithText('span', crsSummary(index), 'summary')
+        createElementWithText('span', area, 'area'),
+        createElementWithText('h4', name),
+        createElementWithText('span', summary, 'summary')
       );
 
-      // 만들어진 카드 html에 추가
-      const block = document.querySelector('.recomandRoad');
-      block.appendChild(a);
+      document.querySelector('.recomandRoad').appendChild(a);
     };
 
     // 각 길마다 5개씩 랜덤추첨(중복허용)
