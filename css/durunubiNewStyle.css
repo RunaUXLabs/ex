@@ -5,8 +5,8 @@
 /* Material Icons Outlined*/
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
 /* font-awsome v6.1.1 */
-@import url('https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css');
-/* swiper 9 */
+@import url('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+/* swiper 11 */
 
 /* 두루누비 New pc */
 * {
@@ -51,7 +51,6 @@ body {
     height: 8px;
     /* height of horizontal scrollbar */
 }
-
 *::-webkit-scrollbar-track {
     background: #f9f9f9;
 }
@@ -619,11 +618,9 @@ div.right .tabContent > .tabBox a {
     color: var(--colorFontBasic);
     padding: 15px 20px;
     letter-spacing: -1px;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
 }
 .recomandRoad .summary {
     color: var(--colorFontDark);
