@@ -642,7 +642,31 @@ div.right .tabContent > .tabBox a {
 .recomandRoad > a.seo .tag {
     color: var(--colorGreenLight);
 }
-
+.recomandRoad > a.hae::before,
+.recomandRoad > a.nam::before,
+.recomandRoad > a.seo::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    right: -16px;
+    width: 64px;
+    aspect-ratio: 1;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 0.1;
+}
+.recomandRoad > a.hae::before {
+    background-image: url(/ex/images/duru/main_tab01.png);
+    opacity: 0.15;
+}
+.recomandRoad > a.nam::before {
+    background-image: url(/ex/images/duru/main_tab02.png);
+}
+.recomandRoad > a.seo::before {
+    background-image: url(/ex/images/duru/main_tab03.png);
+}
 .sec04 {
     height: 460px;
     background: linear-gradient(to right, #394841, #354046);
