@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/* 디자인한 프로필 m */
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+main {
+  width: 90%;
+  height: 80vh;
+  padding: 40px;
+  overflow-y: auto;
+}
+main > div {
+  flex-direction: column;
+  gap: 40px;
+}
+h1 {
+  text-align: center;
+}
+section .profileImg {
+  display: flex;
+  margin: 0 auto;
+}
