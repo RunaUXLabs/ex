@@ -9,20 +9,41 @@
   background: rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
+body {
+  padding: 20px 40px;
+  min-width: 440px;
+}
 main {
-  width: 90%;
-  height: 80vh;
-  padding: 40px;
+  width: initial;
+  height: 100%;
+  flex: 1;
+  padding: 20px 40px;
+  align-items: flex-start;
   overflow-y: auto;
+}
+h1 {
+  font-size: 48px;
+  align-self: stretch;
+  text-align: center;
 }
 main > div {
   flex-direction: column;
   gap: 40px;
 }
-h1 {
-  text-align: center;
+section {
+  align-items: center;
+}
+section * {
+  align-self: stretch;
+}
+section h2 {
+  font-size: 24px;
 }
 section .profileImg {
-  display: flex;
-  margin: 0 auto;
+  width: 240px;
+  height: 240px;
+}
+.contact {
+  flex-direction: column;
+  gap: 12px;
 }
