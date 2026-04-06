@@ -20,12 +20,13 @@ menu.addEventListener("click", (event) => {
 
     // 장바구니 추가 또는 수량 증가, 삼항연산자 버전
     // cart[name] = cart[name] ? { price, count: cart[name].count + 1 } : { price, count: 1 };
-    // 장바구니에 추가하거나 수량 증가, if문 버전
 
     // 객체 접근법: 1. 점표기법(객체명.키이름) 2. 대괄호표기법(객체명[키이름])
     // 예시) cart.coffee   cart[coffee]    
     // 위에 선언된 cart라는 객체에 접근을 할거야(초기값은 텅)
     // 카트 현상황이 뭔지 모르겠으나, 내가 버튼을 눌러서 카트에 같은상품이 있으면 갯수를 늘려주고 없으면 1개라고 표기해줘
+
+    // 장바구니에 추가하거나 수량 증가, if문 버전
     if (cart[name]) {
       cart[name].count++;
     } else {
@@ -34,7 +35,7 @@ menu.addEventListener("click", (event) => {
 
     // UI 업데이트
     updateCart(); // 외부에 선언된 함수콜링
-    console.log(cart);// 카트 현상태 보여줘
+    // console.log(cart);// 카트 현상태 보여줘
   }
 });
 
